@@ -1,0 +1,67 @@
+/*  普通CSS */
+/* .show {
+  opacity: 1;
+  transition: all 1s ease-in;
+}
+
+.hide {
+  opacity: 0;
+  animation: hide-item 2s ease-in forwards;
+}
+
+
+@keyframes hide-item {
+  0% {
+    opacity: 1;
+    color: red;
+  }
+
+  50% {
+    opacity: 0.5;
+    color: green;
+
+  }
+
+  100% {
+    opacity: 0;
+    color: pink;
+  }
+
+} */
+
+
+/* react transition group实现动画 */
+/* apper 是第一次刷新的时候，什么也不点的时候，就有效果 */
+.fade-enter,
+.fade-apper {
+  opacity: 0;
+  color: blue;
+}
+
+.fade-enter-active,
+.fade-apper-active {
+  opacity: 1;
+  transition: opacity 3s ease-in;
+  color: pink;
+}
+
+.fade-enter-done {
+  opacity: 1;
+  color: green;
+}
+
+.fade-exit {
+  opacity: 1;
+
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+  color: red;
+
+}
+
+.fade-exit-done {
+  opacity: 0;
+}
