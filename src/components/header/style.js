@@ -28,9 +28,11 @@ export const Nav = styled.div`
     border: 1px solid green;
 `;
 
+
 export const NavItem = styled.div`
-    line-height: 56px;
+    // line-height: 56px;
     padding: 15px;
+    border: 1px solid red;
     font-size: 17px;
     &.left {
         float: left;
@@ -39,10 +41,11 @@ export const NavItem = styled.div`
          float:right;
 }`;
 
+// 搜索🔍 部分
 export const SearchWrapper = styled.div`
     position: relative;
     float: left; 
-    // background: red;
+    background: red;
     &. slide-enter{
         transition: all 0.2s ease-out;
     }
@@ -74,6 +77,55 @@ export const BarSearchWrapper = styled.span`
     }
 `;
 
+// search list -  hide or not part 隐藏部分
+
+export const SearchInfoList = styled.div`
+    position: absolute;
+    right:0;
+    top:38px;
+    width: 240px;
+    // 这个height 不写固定 search div，overflow， 那个可以控制。
+    // height: 150px;
+    // background: gray;
+    padding: 0 10px;
+    box-sizing: border;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+`;
+
+// 热门搜索
+export const SearchInfoTitle = styled.div`
+    margin-top:  20px;
+    margin-bottom: 15px;
+    line-height: 20px;
+    font-size: 14px;
+    color:#969696;
+`;
+
+
+export const SearchInfoSwitch = styled.span`
+    float: right;
+    font-size:12px;
+    cursor:point;
+`;
+
+export const SearchInfoItems = styled.a`
+// 行高
+    line-height: 20px;
+    padding: 0 5px;
+    font-size:12px;
+    border: 1px solid #ddd;
+    color: #333;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    // display: block;
+    float:left;
+`;
+
+
+export const SearchDiv = styled.div`
+    overflow: hidden;
+`;
 
 
 export const NavSearch = styled.input.attrs({
