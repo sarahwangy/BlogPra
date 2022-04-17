@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { CSSTransition } from 'react-transition-group'
+import { Link } from 'react-router-dom'
 import {
     HeaderWrapper, SearchWrapper, BarSearchWrapper,
     RightSpanWrapper, Logo, Nav, NavItem, NavSearch, Addition,
@@ -9,7 +10,7 @@ import {
 
 import { BsSearch, BsPencilSquare, BsGem } from "react-icons/bs"
 import { connect } from 'react-redux'
-import { createFocusedAction, createBlurAction, GetListAction } from '../../redux/action'
+import { createFocusedAction, createBlurAction, GetListAction } from '../../redux/action/action'
 
 
 // 没有redux 的时候，写法
@@ -184,7 +185,7 @@ import { createFocusedAction, createBlurAction, GetListAction } from '../../redu
 
 // --------------------------------------------------------------------
 
-class Header extends Component {
+class Header extends PureComponent {
 
 
     getListArea = () => {
@@ -209,7 +210,6 @@ class Header extends Component {
                                 })
                             }
                         </SearchDiv>
-
                     </div>
                 </SearchInfoList>
             )
@@ -219,10 +219,15 @@ class Header extends Component {
     }
 
     render() {
+        console.log(this.props);
+
         return (
             <div>
                 <HeaderWrapper>
-                    <Logo />
+                    <Link to='/'>
+                        <Logo />
+                    </Link>
+
                     <Nav>
                         <NavItem className='left active'> 首页</NavItem>
                         <NavItem className='left '> 下载APP</NavItem>
@@ -276,7 +281,7 @@ const mapStateToProps = (state) => {
     return {
         // 获取整体state的focus，取名focused，这样 子组件 header就可以用了。
         focused: state.header.focused,
-        list: state.header.list
+        list: state.header.homeList
     }
 }
 

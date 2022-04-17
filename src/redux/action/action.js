@@ -1,5 +1,5 @@
-import store from "./store";
-import { SEARCH_BLUR, SEARCH_FOCUS, CHANGE_LIST } from "./constants";
+import store from "../store";
+import { SEARCH_BLUR, SEARCH_FOCUS, CHANGE_LIST } from "../constants";
 import axios from "axios";
 
 

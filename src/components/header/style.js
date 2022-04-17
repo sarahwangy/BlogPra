@@ -4,7 +4,7 @@ import logoPic from '../../static/jianshu.png'
 export const HeaderWrapper = styled.div`
     height : 56px;
     // background: red;
-    border-bottom: 1px solid #f0f0f0;
+    // border-bottom: 1px solid #f0f0f0;
     position: relative; `;
 
 export const Logo = styled.a`
@@ -25,14 +25,14 @@ export const Nav = styled.div`
     // background: green;
     padding-right: 70px;
     box-sizing: border-box;
-    border: 1px solid green;
+    // border: 1px solid green;
 `;
 
 
 export const NavItem = styled.div`
     // line-height: 56px;
     padding: 15px;
-    border: 1px solid red;
+    // border: 1px solid red;
     font-size: 17px;
     &.left {
         float: left;
@@ -45,7 +45,7 @@ export const NavItem = styled.div`
 export const SearchWrapper = styled.div`
     position: relative;
     float: left; 
-    background: red;
+    // background: red;
     &. slide-enter{
         transition: all 0.2s ease-out;
     }
@@ -86,14 +86,16 @@ export const SearchInfoList = styled.div`
     width: 240px;
     // 这个height 不写固定 search div，overflow， 那个可以控制。
     // height: 150px;
-    // background: gray;
+    background: #fff;
     padding: 0 10px;
     box-sizing: border;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    
 `;
 
 // 热门搜索
 export const SearchInfoTitle = styled.div`
+    text-align: left;
     margin-top:  20px;
     margin-bottom: 15px;
     line-height: 20px;
@@ -182,3 +184,5 @@ export const Button = styled.div`
 export const RightSpanWrapper = styled.span`
     vertical-align: middle;
 `
+
+
