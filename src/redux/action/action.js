@@ -1,5 +1,5 @@
 import store from "../store";
-import { SEARCH_BLUR, SEARCH_FOCUS, CHANGE_LIST } from "../constants";
+import { SEARCH_BLUR, SEARCH_FOCUS, CHANGE_LIST, LOGIN_OUT } from "../constants";
 import axios from "axios";
 
 
@@ -11,6 +11,10 @@ export const createFocusedAction = () => ({ type: SEARCH_FOCUS })
 export const createBlurAction = () => ({ type: SEARCH_BLUR })
 
 export const changeList = (data) => ({ type: CHANGE_LIST, data })
+
+
+
+
 
 // 若后端没有开发好接口API的情况下，前端可以拟个 fake API 端口， 模拟 进行axios 请求数据。
 export const GetListAction = () => {

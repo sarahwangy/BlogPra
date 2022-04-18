@@ -172,6 +172,7 @@ export const Button = styled.div`
     text-align: center;
     border: 1px solid #ea6f5a;
     padding: 0 20px;
+     
     margin-right: 20px;
     &.reg{
         color:#ea6f5a;
@@ -184,6 +185,7 @@ export const Button = styled.div`
 
 export const RightSpanWrapper = styled.span`
     vertical-align: middle;
+   
 `
 
 

@@ -2,7 +2,7 @@ import { CHANGE_HOME, ADD_MORE_LIST, CHANGE_SHOW_SCROLL } from "../constants";
 import axios from "axios";
 
 
-export const changeShowSroll = () => ({ type: CHANGE_SHOW_SCROLL })
+export const changeShowSroll = (data) => ({ type: CHANGE_SHOW_SCROLL, data })
 
 export const changeHome = (data) => ({ type: CHANGE_HOME, data })
 

@@ -20,3 +20,6 @@ export const GET_DETAIL_DATA = 'get_detail_data'
 
 // LOGIN
 export const GET_LOGIN_DATA = 'get_login_data'
+
+// loginout
+export const LOGIN_OUT = 'login_out'

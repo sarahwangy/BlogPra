@@ -8,9 +8,10 @@ import {
     SearchInfoItems, SearchDiv
 } from './style'
 
-import { BsSearch, BsPencilSquare, BsGem } from "react-icons/bs"
+import { BsSearch, BsPencilSquare, BsGem, BsLink } from "react-icons/bs"
 import { connect } from 'react-redux'
 import { createFocusedAction, createBlurAction, GetListAction } from '../../redux/action/action'
+import { createLoginOut } from '../../redux/action/loginAction'
 
 
 // 没有redux 的时候，写法
@@ -230,11 +231,15 @@ class Header extends PureComponent {
                     </Link>
 
                     <Nav>
-                        <NavItem className='left active'> 首页</NavItem>
+                        <NavItem className='left active'>
+                            <Link to='/'>
+                                首页
+                            </Link>
+                        </NavItem>
                         <NavItem className='left '> 下载APP</NavItem>
                         {
                             this.props.login ?
-                                <NavItem className='right'>退出</NavItem> :
+                                <NavItem onClick={this.props.loginOut} className='right'>退出</NavItem> :
                                 <Link to='/login'> <NavItem className='right active'> 登陆</NavItem></Link>
                         }
 
@@ -265,11 +270,13 @@ class Header extends PureComponent {
 
                     </Nav>
                     <Addition>
-                        <Button className='writting'>
-                            <RightSpanWrapper>
-                                <BsPencilSquare size={18} />
-                            </RightSpanWrapper> 写文章
-                        </Button>
+                        <Link to='/write'>
+                            <Button className='writting'>
+                                <RightSpanWrapper>
+                                    <BsPencilSquare size={18} />
+                                </RightSpanWrapper> 写文章
+                            </Button>
+                        </Link>
                         <Button className='reg'>注册</Button>
 
                     </Addition>
@@ -328,7 +335,11 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(createFocusedAction());
 
         },
-        handleInputBlur: () => dispatch(createBlurAction())
+        handleInputBlur: () => dispatch(createBlurAction()),
+
+        //  loginout action 为了格式统一，好寻找，统一写在了 login action文件里面，处理的话，也在login reduce 里处理
+        //  header组件不仅可以读取  login组件的state，而还可以 调用 login的action，reducer
+        loginOut: () => dispatch(createLoginOut())
     }
 }
 

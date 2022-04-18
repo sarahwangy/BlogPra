@@ -1,5 +1,5 @@
 
-import Write from './write'
+import Write from '../../pages/write'
 import HomeList from './homeList'
 import Recommend from './recommend'
 import Topic from './topic'

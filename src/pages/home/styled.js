@@ -23,7 +23,10 @@ export const HomeLeft = styled.div`
 export const HomeRight = styled.div`
     float: right;
     width:280px;
-    // background: pink;
+    // background: lightpink;
+    // border:1px solid black;
+    box-shadow:10px 5px 5px 5px #ddd;
+}
 
 `;
 
@@ -119,10 +122,13 @@ export const WriteWrapper = styled.div`
     width:278px;
     border: 1px solid #dcdcdc;
     border-radius: 3px;
-    height: 300px;
-    line-height: 300px;
+    height: 100px;
+    line-height: 100px;
     text-align:center;
-    border: 1px solid black;
+    // border: 1px solid black;
+    background: lightblue;
+ 
+  
 `;
 
 //  LoadMore part

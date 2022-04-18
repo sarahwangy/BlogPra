@@ -1,4 +1,4 @@
-import { GET_LOGIN_DATA } from "../constants";
+import { GET_LOGIN_DATA, LOGIN_OUT } from "../constants";
 
 
 const initState = {
@@ -12,6 +12,8 @@ export default (state = initState, action) => {
     switch (type) {
         case GET_LOGIN_DATA:
             console.log("login reducer", action)
+            return { login: action.data }
+        case LOGIN_OUT:
             return { login: action.data }
 
         default:

@@ -9,7 +9,7 @@ import { Topic, Write, Recommend, HomeList } from '../../components/homeComponen
 // import Recommend from '../../components/homeComponent/recommend'
 // import Topic from '../../components/homeComponent/topic'
 // import Write from '../../components/homeComponent/write'
-import { HomeWrapper, HomeLeft, HomeRight, BackTop } from './styled'
+import { HomeWrapper, HomeLeft, HomeRight, BackTop, WriteWrapper } from './styled'
 // import HomeList from '../../components/homeComponent/homeList'
 
 
@@ -56,7 +56,10 @@ class Home extends PureComponent {
 
                 <HomeRight>
                     <Recommend />
-                    <Write />
+                    <WriteWrapper>
+                        <Write />
+                    </WriteWrapper>
+
                 </HomeRight>
                 {
                     this.props.showScroll ? <BackTop onClick={this.handleScrollTop}>回到顶部</BackTop> : null
@@ -96,7 +99,9 @@ const mapDispatchToProps = (dispatch) => {
             console.log(document.documentElement.scrollTop > 400)
 
             if (document.documentElement.scrollTop > 400) {
-                dispatch(changeShowSroll())
+                dispatch(changeShowSroll(true))
+            } else {
+                dispatch(changeShowSroll(false))
             }
         }
     }

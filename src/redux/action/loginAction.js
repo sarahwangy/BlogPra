@@ -1,7 +1,12 @@
 
 
-import { GET_LOGIN_DATA } from "../constants";
+import { GET_LOGIN_DATA, LOGIN_OUT } from "../constants";
 import axios from "axios";
+
+// 改变login out 的 login 状态
+export const createLoginOut = () => ({ type: LOGIN_OUT, data: false })
+
+
 
 const getLoginData = (data) => {
     console.log("==========getLoginData:")

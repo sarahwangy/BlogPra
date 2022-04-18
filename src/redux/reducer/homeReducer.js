@@ -33,7 +33,7 @@ export default (state = initState, action) => {
                 articleListPage: action.articleListPage
             }
         case CHANGE_SHOW_SCROLL:
-            return { ...state, showScroll: true }
+            return { ...state, showScroll: action.data }
         default:
             return state;
     }
