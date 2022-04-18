@@ -12,15 +12,25 @@ import { Topic, Write, Recommend, HomeList } from '../../components/homeComponen
 import { HomeWrapper, HomeLeft, HomeRight, BackTop } from './styled'
 // import HomeList from '../../components/homeComponent/homeList'
 
+
 class Home extends PureComponent {
 
     handleScrollTop = () => {
         window.scrollTo(0, 0);
     }
 
+    //  绑定事件， 监听 scroll， 用户是否开始 scroll页面
     bindEvent = () => {
         window.addEventListener('scroll', this.props.changeShowSroll)
     }
+
+
+    //  componentDid Mount 挂载的时候调用 bindEvent, this event 直接监听 changesroll方法
+    //  立马加载，但是用户没有scroll 情况下，也不会立马执行这个钩子
+    componentDidMount() {
+        this.bindEvent()
+    }
+
 
     render() {
         return (
@@ -40,13 +50,16 @@ class Home extends PureComponent {
                     this.props.showScroll ? <BackTop onClick={this.handleScrollTop}>回到顶部</BackTop> : null
                 }
 
+                {/* 可以用按钮 绑定事件，但是这样有点多余，用户滑到 比较多的时候，页面可以scroll 的时候，生命周期钩子 自动使 回到顶部 出现，用户点击 回到顶部，直接回到最上面 top*/}
+                <button onClick={this.bindEvent}> click </button>
             </HomeWrapper>
+
 
         )
     }
 }
 
-// ??? container home 里面不用获取state吗，还是说谁用谁自己获取，反正大家都用connect了， home用哪个state，就只取哪个state？
+//container home 里面不用获取state吗，谁用谁自己获取，反正大家都用connect了， home用哪个state，就只取哪个state？
 
 const mapStateToProps = (state) => ({
     // articleList: state.home.articleList,
@@ -57,12 +70,23 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        changeHomeList: dispatch(GetHomeAction()),
+        changeHomeList: () => dispatch(GetHomeAction()),
         // 回到顶部，/???
-        changeShowSroll: () => {
-            console.log("scrolll--->", document.documentElement.showScroll)
-        }
+        // changeShowSroll: () => {
+        //     console.log("scrolll--->", document.documentElement.scrollTop)
 
+        // }
+        changeShowSroll: () => {
+
+            //  打 log 排查 错误 - 是否目前scroll 大于400
+            console.log("scrolll--->", document.documentElement.scrollTop)
+            //判断是否 是 TRUE值，是TRUE的话，执行那个dispatch。。。
+            console.log(document.documentElement.scrollTop > 400)
+
+            if (document.documentElement.scrollTop > 400) {
+                dispatch(changeShowSroll())
+            }
+        }
     }
 
 }
