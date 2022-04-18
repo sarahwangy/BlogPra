@@ -63,7 +63,7 @@ class Home extends PureComponent {
                 }
 
                 {/* 可以用按钮 绑定事件，但是这样有点多余，用户滑到 比较多的时候，页面可以scroll 的时候，生命周期钩子 自动使 回到顶部 出现，用户点击 回到顶部，直接回到最上面 top*/}
-                <button onClick={this.bindEvent}> click </button>
+                {/* <button onClick={this.bindEvent}> click </button> */}
             </HomeWrapper>
 
 

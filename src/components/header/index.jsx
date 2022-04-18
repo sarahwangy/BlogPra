@@ -220,6 +220,7 @@ class Header extends PureComponent {
 
     render() {
         console.log(this.props);
+        console.log("header_login_props", this.props.login)
 
         return (
             <div>
@@ -231,7 +232,13 @@ class Header extends PureComponent {
                     <Nav>
                         <NavItem className='left active'> 首页</NavItem>
                         <NavItem className='left '> 下载APP</NavItem>
-                        <NavItem className='right active'> 登陆</NavItem>
+                        {
+                            this.props.login ?
+                                <NavItem className='right'>退出</NavItem> :
+                                <Link to='/login'> <NavItem className='right active'> 登陆</NavItem></Link>
+                        }
+
+
                         <NavItem className='right'> Aa</NavItem>
 
                         {/* 搜索🔍 部分 */}
@@ -276,12 +283,19 @@ class Header extends PureComponent {
 
 
 
+//  这里需要后期把page，totalpage 方法，加上去！！！！！！ ===》待做！！
 
 const mapStateToProps = (state) => {
     return {
         // 获取整体state的focus，取名focused，这样 子组件 header就可以用了。
         focused: state.header.focused,
-        list: state.header.homeList
+        list: state.header.homeList,
+        page: state.header.page,
+        totalPage: state.header.totalPage,
+        mouseIn: state.header.mouseIn,
+
+        // 可以获取其他组件 储存在 state 的状态，这里header 组件获取 login 的login 状态
+        login: state.login.login
     }
 }
 

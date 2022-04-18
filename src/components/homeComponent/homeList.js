@@ -20,7 +20,7 @@ class HomeList extends PureComponent {
                         console.log(JSON.stringify(articleObj))
 
                         return (
-                            <Link key={index} to='/detail'>
+                            <Link key={index} to={`/detail/${articleObj.id}`} >
                                 <ListItem >
                                     <img className='list-img' src={articleObj.imgUrl} alt='120' />
                                     <ListInfo>
@@ -38,7 +38,7 @@ class HomeList extends PureComponent {
                     })
                 }
                 <LoadMore onClick={() => this.props.getMoreList(this.props.articleListPage)}> 加载更多</LoadMore>
-            </div>
+            </div >
         )
     }
 }

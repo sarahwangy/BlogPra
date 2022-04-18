@@ -4,7 +4,7 @@ export const DetailWrapper = styled.div`
     // overflow: hidden;
     width: 620px;
     margin: 0 auto;
-    background: red;
+    // background: red;
     height:100px;
 `;
 
@@ -22,6 +22,7 @@ export const Content = styled.div`
     color:##2f2f2f;
     img {
         width:100%;
+        margin-bottom: 30px;
     }
     p{
         margin: 25px 0;

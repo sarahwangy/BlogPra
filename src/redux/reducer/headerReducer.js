@@ -2,10 +2,15 @@ import { SEARCH_BLUR, SEARCH_FOCUS, CHANGE_LIST } from "../constants";
 
 const initState = {
     focused: false,
-    homeList: []
+    homeList: [],
+    page: 0,
+    totalPage: 0,
+    mouseIn: false
+
 };
 
 export default (state = initState, action) => {
+    // console.log("headReducer")
     const { type } = action;
     switch (type) {
         case SEARCH_FOCUS:

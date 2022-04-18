@@ -1,14 +1,21 @@
-import { } from "../constants";
+import { GET_DETAIL_DATA } from "../constants";
 
 const initState = {
-    title: '一片阳光',
-    content: '< p > 接连几天都是晴空万里, 阳光明媚, 看上去温暖和煦 </p>'
+    title: '',
+    content: ' '
 
 };
 
 export default (state = initState, action) => {
     const { type } = action;
     switch (type) {
+        case GET_DETAIL_DATA:
+            console.log("detail_actioin", action)
+
+            return {
+                title: action.data.title,
+                content: action.data.content
+            }
 
         default:
             return state;

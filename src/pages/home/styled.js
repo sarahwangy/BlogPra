@@ -23,7 +23,7 @@ export const HomeLeft = styled.div`
 export const HomeRight = styled.div`
     float: right;
     width:280px;
-    background: pink;
+    // background: pink;
 
 `;
 
@@ -99,13 +99,14 @@ export const ListInfo = styled.div`
 export const RecommendWrapper = styled.div`
     margin: 30px 0;
     width: 280px;
-    border: 1px solid red;
+    // border: 1px solid red;
 `;
 
 export const RecommendItem = styled.div`
     width: 280px;
     height: 50px;
     background: url(${(props) => props.imgUrl});
+    margin-bottom: 12px;
     background-size: contain;
     // background-repeat: no-repeat;
     

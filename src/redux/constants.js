@@ -13,3 +13,10 @@ export const CHANGE_HOME = 'change_home';
 export const ADD_MORE_LIST = 'add_more_list'
 
 export const CHANGE_SHOW_SCROLL = 'change_show_scroll'
+
+// detail
+
+export const GET_DETAIL_DATA = 'get_detail_data'
+
+// LOGIN
+export const GET_LOGIN_DATA = 'get_login_data'
