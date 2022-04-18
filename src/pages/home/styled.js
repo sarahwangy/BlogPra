@@ -146,9 +146,10 @@ export const BackTop = styled.div`
     line-height: 60px;
     text-align: center;
     border: 1px solid #ccc;
-    // background: red;
+    background: lightgray;
     right:100px;
     bottom: 100px;
     font-size:15px;
     padding:5px;
+
 `;

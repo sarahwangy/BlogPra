@@ -28,7 +28,19 @@ class Home extends PureComponent {
     //  componentDid Mount 挂载的时候调用 bindEvent, this event 直接监听 changesroll方法
     //  立马加载，但是用户没有scroll 情况下，也不会立马执行这个钩子
     componentDidMount() {
-        this.bindEvent()
+        this.bindEvent();
+
+        // 借助 redux dev tool 查看 state 状态，哪些获取了，哪些没有获取。。
+        //  如果没有其他按钮绑定 这个axios 调取数据的话，可以用 componentdidmount 调取changelist 方发
+        this.props.changeHomeList();
+
+    }
+
+
+    //  取消监听事件：
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.props.changeShowSroll)
     }
 
 

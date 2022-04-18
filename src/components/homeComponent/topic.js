@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 
 class Topic extends PureComponent {
     render() {
-        // console.log('topic', this.props, this.props.topicLists[0].title)
+        console.log('topic', this.props)
+        // console.log(this.props.topicListObj)
         return (
 
             <TopicWrapper>
