@@ -1,13 +1,13 @@
 {
-    "success": "true",
-    "data": [
-        "教育",
-        "路由",
-        "生活",
-        "快乐",
-        "冥想",
-        "编程",
-        "锻炼",
-        "睡觉"
-    ]
+  "success": "true",
+  "data": [
+    "Education",
+    "Travel",
+    "Life",
+    "Happy",
+    "Mediation",
+    "Code",
+    "Exercise",
+    "Sleep"
+  ]
 }
