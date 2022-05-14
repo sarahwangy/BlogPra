@@ -4,10 +4,6 @@
 
 This is a blog website that provides home page including article list, topic list, search part, recommend list, and detail page, write page.
 
-\
-<br/>
-\
-
 ## Table of Contents
 
 1. [Technical Features](#tech)
